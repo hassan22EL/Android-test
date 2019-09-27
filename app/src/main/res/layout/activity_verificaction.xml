@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actvity.VerificactionActivity">
+
+    <TextView
+        android:id="@+id/verifiy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/verifiy"
+        android:textColor="#fff" />
+
+    <TextView
+
+        android:id="@+id/change_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/ver"
+        android:layout_below="@+id/verifiy"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change_phoneNumber"
+        android:layout_margin="40dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:textColor="#fff"
+        android:hint="_     _    _        _     _    _"
+        android:maxLines="1"
+        android:maxLength="6"
+        android:textColorHint="#fff"
+        android:id="@+id/verifiy_code" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verifiy_code">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:textColor="#fff"
+            android:inputType="datetime"
+            android:hint="time"
+            android:textSize="7sp"
+            android:textColorHint="#fff"
+            android:id="@+id/countdown" />
+
+        <TextView
+            android:id="@+id/resendmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="7sp"
+            android:text="Resend SMS Message"
+            android:layout_margin="3dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

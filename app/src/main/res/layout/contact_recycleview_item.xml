@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="2dp"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/deflaut_image"
+        android:id="@+id/phtoprofilerec"
+        android:layout_margin="2dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/phtoprofilerec"
+        android:layout_margin="5dp"
+        android:gravity="left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernamerec"
+            android:layout_marginLeft="5dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="username" />
+
+        <TextView
+            android:id="@+id/aboutrec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernamerec"
+            android:text="About"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:id="@+id/lastseenrec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:text="LastSeen"
+            android:textColor="#fff"
+            android:inputType="time|text"
+            android:textSize="8dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

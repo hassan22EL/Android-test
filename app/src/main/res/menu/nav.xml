@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chats"
+        android:icon="@drawable/cameraicon"
+        android:title="@string/title_chats" />
+    <item
+        android:id="@+id/groups"
+        android:icon="@drawable/gallery"
+        android:title="@string/title_Groups" />
+    <item
+        android:id="@+id/status"
+        android:icon="@drawable/cameraicon"
+        android:title="@string/title_Status" />
+    <item
+        android:id="@+id/onlineUser"
+        android:icon="@drawable/gallery"
+        android:title="@string/title_online" />
+</menu>

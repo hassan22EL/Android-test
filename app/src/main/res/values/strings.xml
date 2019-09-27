@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HEESApp</string>
+    <string name="verifiy">Verification Phone Number</string>
+    <string name="Phone">Enter a Phone Number</string>
+    <string name="verifiy_msg">Please Enter a Right Phone Number and County code because the HEESApp can send 
+     a SMS Message Contains a Verification Code to verifiy Phone Number
+    </string>
+    <string name="ver">Please wait to HEESApp a receive SMS message to verifiy phone Number if the phone number has a error please press a Worng
+    </string>
+    <string name="dialog"> HEESApp can send
+     a SMS Message Contains a Verification Code to verifiy Phone Number if  not have this Phone Number Please Enter a Worng </string>
+
+    <string name="title_chats">Chats</string>
+    <string name="title_Groups">Groups</string>
+    <string name="title_Status">Status</string>
+    <string name="title_online">Online</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="drawble_open">open</string>
+    <string name="draable_close">close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

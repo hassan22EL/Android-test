@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rV">
+
+        <RelativeLayout
+            android:id="@+id/reV1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="30dp"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/re1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cretenewGroup"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:src="@android:drawable/gallery_thumb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cretenewGroup"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Create New Group"
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re1"
+
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/blocking"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:src="@android:drawable/gallery_thumb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/blocking"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="Block this User"
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_toRightOf="@+id/reV1"
+            android:id="@+id/reV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/re3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/DeleteUser"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:src="@android:drawable/gallery_thumb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/DeleteUser"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="Dont Care User"
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re3"
+
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/show"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:src="@android:drawable/gallery_thumb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/show"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:text="best of User"
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/cencel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rV"
+        android:text="Cencl"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:layout_margin="5dp"
+        android:background="#AAA"
+
+        />
+
+
+</RelativeLayout>

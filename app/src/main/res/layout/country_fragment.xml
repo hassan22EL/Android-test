@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.CountryFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:text="Region Code Select"
+        android:layout_gravity="center"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/search_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="search"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:textSize="20sp"
+
+            />
+
+        <EditText
+            android:id="@+id/search_contries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Serach"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:layout_margin="10dp"
+            android:textColorHint="#fff"
+            android:visibility="gone"
+            android:textColor="#fff"
+            android:maxLines="1" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/countries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+
+        />
+</LinearLayout>

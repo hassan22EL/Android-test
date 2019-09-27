@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Actvity.LoginActivity">
+
+    <TextView
+        android:id="@+id/verifiy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/Phone"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/verifiy_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        android:text="@string/verifiy_msg"
+        android:layout_below="@+id/verifiy"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/country_list"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/verifiy_msg"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:padding="10dp"
+        android:drawableEnd="@drawable/edit_box_drop_sel_white"
+        android:textColor="#fff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/country_list"
+        android:layout_margin="5dp"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:hint="Code"
+        android:maxLines="1"
+        android:textColorHint="#fff"
+        android:id="@+id/Country_code" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/country_list"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/Country_code"
+        android:textColor="#fff"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:maxLength="12"
+        android:textColorHint="#fff"
+        android:id="@+id/Phone_Number" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_verification"
+        android:layout_margin="20dp"
+        android:textColor="#fff"
+        android:padding="5dp"
+        android:text="Verification" />
+</RelativeLayout>
