@@ -29,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 import com.example.hees.R;
 
 import java.util.Arrays;
+import java.util.concurrent.Semaphore;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -50,13 +51,14 @@ public class CameraActivity extends AppCompatActivity {
     private Size mSize, mSize2;  //size of preview to open camera
     private Handler mHandler, mHandler2;
     private HandlerThread mThread, mThread2;
-
-    private boolean isPressed = false;
+    private Semaphore mCameraOPenCloseLock = new Semaphore(1);
+    private boolean isPressed;
 
 
     private CameraDevice.StateCallback mCallback = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(@NonNull CameraDevice cameraDevice) {
+            mCameraOPenCloseLock.release();
             mDevice = cameraDevice;
             try {
                 Create_PerviewCamera();
@@ -67,11 +69,13 @@ public class CameraActivity extends AppCompatActivity {
 
         @Override
         public void onDisconnected(@NonNull CameraDevice cameraDevice) {
+            mCameraOPenCloseLock.release();
             cameraDevice.close();
         }
 
         @Override
         public void onError(@NonNull CameraDevice cameraDevice, int i) {
+            mCameraOPenCloseLock.release();
             cameraDevice.close();
             mDevice = null;
         }
@@ -119,6 +123,7 @@ public class CameraActivity extends AppCompatActivity {
     private CameraDevice.StateCallback mCallback2 = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(@NonNull CameraDevice cameraDevice) {
+            mCameraOPenCloseLock.release();
             mDevice2 = cameraDevice;
             try {
                 Create_PerviewCamera2();
@@ -129,11 +134,13 @@ public class CameraActivity extends AppCompatActivity {
 
         @Override
         public void onDisconnected(@NonNull CameraDevice cameraDevice) {
+            mCameraOPenCloseLock.release();
             cameraDevice.close();
         }
 
         @Override
         public void onError(@NonNull CameraDevice cameraDevice, int i) {
+            mCameraOPenCloseLock.release();
             cameraDevice.close();
             mDevice2 = null;
         }
@@ -236,12 +243,12 @@ public class CameraActivity extends AppCompatActivity {
                     CameraPerview2.setSurfaceTextureListener(mTextureListener2);
                     Toast.makeText(CameraActivity.this, "Front Camera ", Toast.LENGTH_SHORT).show();
                 } else {
-                    isPressed = false;
                     CloseCamera2();
                     CameraPerview.setVisibility(View.VISIBLE);
                     CameraPerview2.setVisibility(View.GONE);
                     CameraPerview.setSurfaceTextureListener(mTextureListener);
                     Toast.makeText(CameraActivity.this, "Back Camera ", Toast.LENGTH_SHORT).show();
+                    isPressed = false;
                 }
             }
         });
@@ -420,7 +427,15 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void CloseCamera() {
-
+        try {
+            mCameraOPenCloseLock.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (null != mSession) {
+            mSession.close();
+            mSession = null;
+        }
         if (null != mDevice) {
             mDevice.close();
             mDevice = null;
@@ -428,9 +443,18 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void CloseCamera2() {
+        try {
+            mCameraOPenCloseLock.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (null != mDevice2) {
             mDevice2.close();
             mDevice2 = null;
+        }
+        if (null != mSession2) {
+            mSession2.close();
+            mSession2 = null;
         }
 
     }
@@ -446,10 +470,12 @@ public class CameraActivity extends AppCompatActivity {
             } catch (CameraAccessException e) {
                 e.printStackTrace();
             }
-        } else if (!CameraPerview2.isAvailable()) {
+        } else {
             CameraPerview.setSurfaceTextureListener(mTextureListener);
+        }
 
-        } else if (CameraPerview2.isAvailable()) {
+
+        if (CameraPerview2.isAvailable()) {
             try {
                 Open_Camera2();
             } catch (CameraAccessException e) {
@@ -458,7 +484,6 @@ public class CameraActivity extends AppCompatActivity {
         } else {
             CameraPerview2.setSurfaceTextureListener(mTextureListener2);
         }
-
 
     }
 
@@ -480,5 +505,8 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
+    private void useFlash() {
+
+    }
 
 }
